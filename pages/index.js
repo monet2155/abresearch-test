@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Script from 'next/script';
+import { useEffect } from 'react';
 import { RecoilRoot, useRecoilState } from "recoil";
 import { currentExperimentState } from "../states";
 
@@ -39,10 +40,6 @@ export default function Home() {
             gtag('js', new Date()); 
             gtag('config', 'G-164EV57676');
 
-          //   gtag('event', 'optimize.callback', {
-          //     name: 'xLpdl6nFTdy0JPGg4H96Hw',
-          //     callback: ${implementExperimentA}
-          // })
         `,
         }}
       ></Script>
