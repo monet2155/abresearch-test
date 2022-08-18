@@ -9,6 +9,7 @@ export default function Home() {
   );
 
     const implementExperimentA = (value) => {
+      console.log(value)
         setCurrentExperiment(value)
     }
   return (
@@ -29,15 +30,14 @@ export default function Home() {
             }
             gtag('js', new Date()); 
             gtag('config', 'G-164EV57676');
+
+            gtag('event', 'optimize.callback', {
+              name: 'xLpdl6nFTdy0JPGg4H96Hw',
+              callback: ${implementExperimentA}
+          })
         `,
         }}
       ></Script>
-      <Script>
-        {`gtag('event', 'optimize.callback', {
-                name: 'xLpdl6nFTdy0JPGg4H96Hw',
-                callback: ${implementExperimentA}
-            })`}
-      </Script>
       {currentExperiment == -1 ? (
         <div>
           no current experiment
