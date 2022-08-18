@@ -1,7 +1,16 @@
 import Script from "next/script"
+import { RecoilRoot, useRecoilState } from "recoil";
+import { currentExperimentState } from "../states";
 
 
 const App = ({ Component, pageProps }) => {
+
+    const [currentExperiment, setCurrentExperiment] = useRecoilState(currentExperimentState)
+
+    const implementExperimentA = (value) => {
+        setCurrentExperiment(value)
+    }
+
   return (
     <>
       {/* <!-- Google tag (gtag.js) --> */}
@@ -21,13 +30,9 @@ const App = ({ Component, pageProps }) => {
             gtag('js', new Date()); 
             gtag('config', 'G-164EV57676');
 
-            function implementExperimentA(value) {
-                console.log(value)
-            }
-
             gtag('event', 'optimize.callback', {
                 name: 'xLpdl6nFTdy0JPGg4H96Hw',
-                callback: implementExperimentA
+                callback: ${implementExperimentA}
             })
         `,
         }}
@@ -40,7 +45,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 {'OPT-T9PJTTQ':true});`}
       </Script>
       <Script src="https://www.googleoptimize.com/optimize.js?id=OPT-T9PJTTQ"></Script>
-      <Component {...pageProps} />
+      <RecoilRoot>
+        <Component {...pageProps} />
+      </RecoilRoot>
     </>
   );
 };
