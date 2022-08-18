@@ -1,14 +1,7 @@
 import Script from "next/script"
 import { RecoilRoot, useRecoilState } from "recoil";
-import { currentExperimentState } from "states";
 
 const App = ({ Component, pageProps }) => {
-
-    const [currentExperiment, setCurrentExperiment] = useRecoilState(currentExperimentState)
-
-    const implementExperimentA = (value) => {
-        setCurrentExperiment(value)
-    }
 
   return (
     <>
@@ -28,11 +21,6 @@ const App = ({ Component, pageProps }) => {
             }
             gtag('js', new Date()); 
             gtag('config', 'G-164EV57676');
-
-            gtag('event', 'optimize.callback', {
-                name: 'xLpdl6nFTdy0JPGg4H96Hw',
-                callback: ${implementExperimentA}
-            })
         `,
         }}
       ></Script>
