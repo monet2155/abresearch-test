@@ -20,6 +20,15 @@ const App = ({ Component, pageProps }) => {
             }
             gtag('js', new Date()); 
             gtag('config', 'G-164EV57676');
+
+            function implementExperimentA(value) {
+                console.log(value)
+            }
+
+            gtag('event', 'optimize.callback', {
+                name: 'xLpdl6nFTdy0JPGg4H96Hw',
+                callback: implementExperimentA
+            })
         `,
         }}
       ></Script>
