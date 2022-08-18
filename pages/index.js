@@ -11,7 +11,7 @@ export default function Home() {
   const empty = useRef(null)
 
   useEffect(() => {
-    console.log(empty.current.innerText)
+    console.log(empty.current)
   }, [empty])
 
     const implementExperimentA = (value) => {
