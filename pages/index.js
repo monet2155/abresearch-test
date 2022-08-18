@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Script from 'next/script';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { RecoilRoot, useRecoilState } from "recoil";
 import { currentExperimentState } from "../states";
 
@@ -8,6 +8,7 @@ export default function Home() {
   const [currentExperiment, setCurrentExperiment] = useRecoilState(
     currentExperimentState
   );
+  const empty = useRef(null)
 
   useEffect(() => {
     window.dataLayer.push('event', 'optimize.callback', {
@@ -40,9 +41,19 @@ export default function Home() {
             gtag('js', new Date()); 
             gtag('config', 'G-164EV57676');
 
+            gtag('event', 'optimize.callback', {
+              name: 'xLpdl6nFTdy0JPGg4H96Hw',
+              callback: function(value){
+                console.log('value', value)
+                let elem = document.getElementById('empty')
+                elem.innerText = value
+              }
+            })
         `,
         }}
-      ></Script>
+      >
+      </Script>
+      <div id='empty' ref={empty}></div>
       currentExperiment : {currentExperiment}
       {currentExperiment == -1 ? (
         <div>
