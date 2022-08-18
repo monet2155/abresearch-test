@@ -10,10 +10,6 @@ export default function Home() {
   );
   const empty = useRef(null)
 
-  useEffect(() => {
-    console.log(empty.current)
-  }, [empty])
-
     const implementExperimentA = (value) => {
       console.log(value)
         setCurrentExperiment(value)
@@ -42,14 +38,17 @@ export default function Home() {
               callback: function(value){
                 console.log('value', value)
                 let elem = document.getElementById('empty')
-                elem.innerText = value
+                elem.value = value
               }
             })
         `,
         }}
       >
       </Script>
-      <div id='empty' ref={empty}></div>
+      <input id='empty' ref={empty} onChange={(e) => {
+        console.log('e.target.value', e.target.value)
+        setCurrentExperiment(e.target.value)
+      }}></input>
       currentExperiment : {currentExperiment}
       {currentExperiment == -1 ? (
         <div>
