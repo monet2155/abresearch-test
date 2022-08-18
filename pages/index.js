@@ -38,6 +38,7 @@ export default function Home() {
         `,
         }}
       ></Script>
+      currentExperiment : {currentExperiment}
       {currentExperiment == -1 ? (
         <div>
           no current experiment
