@@ -8,6 +8,14 @@ export default function Home() {
     currentExperimentState
   );
 
+  useEffect(() => {
+    window.dataLayer.push('event', 'optimize.callback', {
+      name: 'xLpdl6nFTdy0JPGg4H96Hw',
+      callback: implementExperimentA
+    })
+  }, [])
+  
+
     const implementExperimentA = (value) => {
       console.log(value)
         setCurrentExperiment(value)
@@ -31,10 +39,10 @@ export default function Home() {
             gtag('js', new Date()); 
             gtag('config', 'G-164EV57676');
 
-            gtag('event', 'optimize.callback', {
-              name: 'xLpdl6nFTdy0JPGg4H96Hw',
-              callback: ${implementExperimentA}
-          })
+          //   gtag('event', 'optimize.callback', {
+          //     name: 'xLpdl6nFTdy0JPGg4H96Hw',
+          //     callback: ${implementExperimentA}
+          // })
         `,
         }}
       ></Script>
