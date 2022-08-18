@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { RecoilRoot, useRecoilState } from "recoil";
-import { currentExperimentState } from "../states";
+import { currentExperimentState } from "states";
 
 export default function Home() {
   const [currentExperiment, setCurrentExperiment] = useRecoilState(currentExperimentState)

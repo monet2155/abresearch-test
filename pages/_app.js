@@ -1,7 +1,6 @@
 import Script from "next/script"
 import { RecoilRoot, useRecoilState } from "recoil";
-import { currentExperimentState } from "../states";
-
+import { currentExperimentState } from "states";
 
 const App = ({ Component, pageProps }) => {
 
