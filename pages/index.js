@@ -17,6 +17,21 @@ export default function Home() {
         <title>A/B Test tool research</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || []; 
+            function gtag(){
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date()); 
+            gtag('config', 'G-164EV57676');
+        `,
+        }}
+      ></Script>
       <Script>
         {`gtag('event', 'optimize.callback', {
                 name: 'xLpdl6nFTdy0JPGg4H96Hw',

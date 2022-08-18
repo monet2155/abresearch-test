@@ -10,20 +10,6 @@ const App = ({ Component, pageProps }) => {
         async
         src={`https://www.googletagmanager.com/gtag/js?id=G-164EV57676`}
       ></Script>
-      <Script
-        id="gtag-init"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || []; 
-            function gtag(){
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date()); 
-            gtag('config', 'G-164EV57676');
-        `,
-        }}
-      ></Script>
       <Script strategy="afterInteractive">
         {`(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
 h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
@@ -33,7 +19,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       </Script>
       <Script src="https://www.googleoptimize.com/optimize.js?id=OPT-T9PJTTQ"></Script>
       <RecoilRoot>
-        <Component {...pageProps} />
+        <Component {...pageProps}/>
       </RecoilRoot>
     </>
   );
