@@ -11,12 +11,8 @@ export default function Home() {
   const empty = useRef(null)
 
   useEffect(() => {
-    window.dataLayer.push('event', 'optimize.callback', {
-      name: 'xLpdl6nFTdy0JPGg4H96Hw',
-      callback: implementExperimentA
-    })
-  }, [])
-  
+    console.log(empty.current.innerText)
+  }, [empty])
 
     const implementExperimentA = (value) => {
       console.log(value)
